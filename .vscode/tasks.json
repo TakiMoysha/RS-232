@@ -1,0 +1,30 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "GHDL Check Syntax",
+            "type": "shell",
+            "command": "cd ${fileDirname} ; ghdl -s ${fileBasename} ; ghdl -a ${fileBasename}",
+            "problemMatcher": []
+        },
+        {
+            "label": "GHDL_tb Check Syntax",
+            "type": "shell",
+            "command": "cd ${fileDirname} ; ghdl -a ${fileBasename}",
+            // "command": "cd ${fileDirname} ; ghdl -a ${fileBasename} ; ghdl -e ${fileBasenameNoExtension} ; ghdl -r ${fileBasenameNoExtension}",
+            "problemMatcher": []
+        },
+        {
+            "label": "GHDL Compile",
+            "type": "shell",
+            "command": "cd ${fileDirname} ; ghdl -r ${fileBasenameNoExtension} --vcd=${fileBasenameNoExtension}.vcd",
+            "problemMatcher": []
+        },
+        {
+            "label": "GTKWave Read *.vcd - file",
+            "type": "shell",
+            "command": "cd ${fileDirname} ; gtkwave ${fileBasename}",
+            "problemMatcher": []
+        }
+    ]
+}
